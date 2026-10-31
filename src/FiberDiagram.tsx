@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { asset } from './asset'
 
 type Period = 'day' | 'week' | 'month'
 type CategoryId = 'veg' | 'fruit' | 'grain' | 'nuts'
@@ -22,16 +23,16 @@ const rings: Record<
   CategoryId,
   { name: string; name2?: string; arc: string; bubble: string; radius: number; icon: string }
 > = {
-  veg: { name: 'Овощи', arc: '#9AC27D', bubble: '#75A94F', radius: 475, icon: '/assets/fiber/a9330.svg' },
-  fruit: { name: 'Фрукты', arc: '#F58B90', bubble: '#F55D6D', radius: 380.5, icon: '/assets/fiber/e7eb2.svg' },
-  grain: { name: 'Крупы', arc: '#B48BEA', bubble: '#965CE0', radius: 285.5, icon: '/assets/fiber/86126.svg' },
+  veg: { name: 'Овощи', arc: '#9AC27D', bubble: '#75A94F', radius: 475, icon: asset("/assets/fiber/a9330.svg") },
+  fruit: { name: 'Фрукты', arc: '#F58B90', bubble: '#F55D6D', radius: 380.5, icon: asset("/assets/fiber/e7eb2.svg") },
+  grain: { name: 'Крупы', arc: '#B48BEA', bubble: '#965CE0', radius: 285.5, icon: asset("/assets/fiber/86126.svg") },
   nuts: {
     name: 'Орехи',
     name2: 'и семена',
     arc: '#F0AF62',
     bubble: '#EFA032',
     radius: 191.5,
-    icon: '/assets/fiber/600ca.svg',
+    icon: asset("/assets/fiber/600ca.svg"),
   },
 }
 
@@ -138,10 +139,10 @@ export default function FiberDiagram() {
   return (
     <>
       <section className="fiber" aria-label="Диаграмма источников клетчатки">
-        <Layer src="/assets/fiber/d4e2b.svg" x={switcherX} y={75} w={555} h={86} />
+        <Layer src={asset("/assets/fiber/d4e2b.svg")} x={switcherX} y={75} w={555} h={86} />
         <Layer
           className="fiber-pill"
-          src="/assets/fiber/dfe77.svg"
+          src={asset("/assets/fiber/dfe77.svg")}
           x={switcherX + active.offset}
           y={83}
           w={160}

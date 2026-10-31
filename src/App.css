@@ -627,7 +627,7 @@
   top: -2.628px;
   width: 33.0638px;
   height: 20.4022px;
-  mask-image: url('/assets/broccoli-mask.svg');
+  mask-image: var(--broccoli-mask);
   mask-repeat: no-repeat;
   mask-size: 29.426px 25.431px;
   mask-position: 2.988px 2.594px;
@@ -655,7 +655,7 @@
   top: 1.808px;
   width: 8.19264px;
   height: 12.4488px;
-  mask-image: url('/assets/broccoli-mask-2.svg');
+  mask-image: var(--broccoli-mask-2);
   mask-repeat: no-repeat;
   mask-size: 11.047px 13.601px;
   mask-position: -3.625px -1.817px;

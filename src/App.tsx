@@ -2,6 +2,7 @@ import { useState } from 'react'
 import FiberDiagram from './FiberDiagram'
 import ProductsScreen from './ProductsScreen'
 import './App.css'
+import { asset } from './asset'
 
 type TabId = 'home' | 'products' | 'diary' | 'profile'
 type ProductId = 'apple' | 'pear' | 'broccoli'
@@ -109,14 +110,14 @@ function BroccoliIcon() {
     <span className="broccoli" aria-hidden="true">
       <span className="broccoli-crown">
         <img
-          src="/assets/broccoli-vector.svg"
+          src={asset("/assets/broccoli-vector.svg")}
           alt=""
           width={29.4247}
           height={25.4311}
         />
         <span className="broccoli-crown-fill">
           <img
-            src="/assets/broccoli-fill.svg"
+            src={asset("/assets/broccoli-fill.svg")}
             alt=""
             width={33.0638}
             height={20.4022}
@@ -125,14 +126,14 @@ function BroccoliIcon() {
       </span>
       <span className="broccoli-stem">
         <img
-          src="/assets/broccoli-vector-2.svg"
+          src={asset("/assets/broccoli-vector-2.svg")}
           alt=""
           width={11.0471}
           height={13.6012}
         />
         <span className="broccoli-stem-fill">
           <img
-            src="/assets/broccoli-fill-2.svg"
+            src={asset("/assets/broccoli-fill-2.svg")}
             alt=""
             width={8.19264}
             height={12.4488}
@@ -147,7 +148,7 @@ function ProductMark({ id }: { id: ProductId }) {
   if (id === 'apple') {
     return (
       <img
-        src="/assets/apple-chip.svg"
+        src={asset("/assets/apple-chip.svg")}
         alt=""
         width={25.4971}
         height={31.3737}
@@ -157,7 +158,7 @@ function ProductMark({ id }: { id: ProductId }) {
 
   if (id === 'pear') {
     return (
-      <img src="/assets/pear.svg" alt="" width={26.6212} height={31.9998} />
+      <img src={asset("/assets/pear.svg")} alt="" width={26.6212} height={31.9998} />
     )
   }
 
@@ -190,7 +191,7 @@ function AppleCluster({ count }: { count: number }) {
       {Array.from({ length: count }, (_, index) => (
         <img
           key={index}
-          src="/assets/apple.svg"
+          src={asset("/assets/apple.svg")}
           alt=""
           width={APPLE_WIDTH}
           height={APPLE_HEIGHT}
@@ -214,7 +215,7 @@ function Hero({ id, count }: { id: ProductId; count: number }) {
     return (
       <img
         className="hero hero-pear"
-        src="/assets/pear.svg"
+        src={asset("/assets/pear.svg")}
         alt=""
         width={26.6212}
         height={31.9998}
@@ -319,7 +320,7 @@ function App() {
         <p className="time">9:41</p>
         <img
           className="status"
-          src="/assets/status.svg"
+          src={asset("/assets/status.svg")}
           alt=""
           width={40.5}
           height={11.5}
@@ -339,7 +340,7 @@ function App() {
             setPortionCount(1)
           }}
         >
-          <img src="/assets/back.svg" alt="" width={23.9938} height={20.4} />
+          <img src={asset("/assets/back.svg")} alt="" width={23.9938} height={20.4} />
         </button>
         <p className="brand">КЛЕТЧАТКА</p>
         <button
@@ -349,7 +350,7 @@ function App() {
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <img src="/assets/more.svg" alt="" width={36} height={36} />
+          <img src={asset("/assets/more.svg")} alt="" width={36} height={36} />
         </button>
 
         {menuOpen && (
@@ -380,14 +381,14 @@ function App() {
 
             <img
               className="fiber-card"
-              src="/assets/fiber-card.svg"
+              src={asset("/assets/fiber-card.svg")}
               alt=""
               width={340}
               height={126}
             />
             <img
               className="leaf"
-              src="/assets/leaf.svg"
+              src={asset("/assets/leaf.svg")}
               alt=""
               width={42.5002}
               height={42}
@@ -397,7 +398,7 @@ function App() {
             <p className="fiber-unit">на 100 г</p>
             <img
               className="fiber-divider"
-              src="/assets/divider.svg"
+              src={asset("/assets/divider.svg")}
               alt=""
               width={299.524}
               height={1}
@@ -407,7 +408,7 @@ function App() {
             <p className="section">Размер порции</p>
             <img
               className="portion-card"
-              src="/assets/portion-card.svg"
+              src={asset("/assets/portion-card.svg")}
               alt=""
               width={340}
               height={64}
@@ -418,7 +419,7 @@ function App() {
               aria-label="Уменьшить порцию"
               onClick={() => setPortionCount((count) => Math.max(1, count - 1))}
             >
-              <img src="/assets/minus.svg" alt="" width={40.4762} height={40} />
+              <img src={asset("/assets/minus.svg")} alt="" width={40.4762} height={40} />
             </button>
             <button
               className="step plus"
@@ -426,7 +427,7 @@ function App() {
               aria-label="Увеличить порцию"
               onClick={() => setPortionCount((count) => count + 1)}
             >
-              <img src="/assets/plus.svg" alt="" width={40.4762} height={40} />
+              <img src={asset("/assets/plus.svg")} alt="" width={40.4762} height={40} />
             </button>
             <p className="portion-label">{portion.label}</p>
             <p className="portion-weight">{portion.weight}</p>
@@ -507,7 +508,7 @@ function App() {
 
         <img
           className="nav-line"
-          src="/assets/nav-line.svg"
+          src={asset("/assets/nav-line.svg")}
           alt=""
           width={356}
           height={1}
